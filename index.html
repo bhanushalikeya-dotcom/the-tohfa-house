@@ -84,7 +84,8 @@
     ========================================================= */
 
     .topbar{
-      min-height:48px;
+      min-height:40px;
+      height:40px;
       background:var(--rose-light);
       color:white;
 
@@ -92,10 +93,10 @@
       align-items:center;
       justify-content:center;
 
-      padding:0 28px;
+      padding:0 24px;
 
-      font-size:11px;
-      letter-spacing:3px;
+      font-size:10px;
+      letter-spacing:2.5px;
       text-transform:uppercase;
 
       position:relative;
@@ -103,15 +104,15 @@
 
     .topbar-right{
       position:absolute;
-      right:32px;
+      right:28px;
 
       display:flex;
-      gap:22px;
+      gap:20px;
       align-items:center;
 
       letter-spacing:0;
       text-transform:none;
-      font-size:13px;
+      font-size:12px;
     }
 
 
@@ -120,15 +121,16 @@
     ========================================================= */
 
 .nav{
-  min-height:82px;
+  min-height:88px;
+  height:88px;
 
   background:var(--white);
 
   display:flex;
   align-items:center;
 
-  gap:34px;
-  padding:0 5.4%;
+  gap:28px;
+  padding:0 5%;
 
   border-bottom:1px solid rgba(74,48,38,.08);
 
@@ -136,12 +138,12 @@
   z-index:20;
 }
     .brand{
-      width:205px;
-      flex:0 0 205px;
+      width:175px;
+      flex:0 0 175px;
     }
 
     .brand img{
-      width:145px;
+      width:125px;
       height:auto;
     }
 
@@ -149,11 +151,12 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:36px;
+  gap:30px;
   flex:1;
   font-family:"Cormorant Garamond",serif;
-  font-size:19px;
+  font-size:18px;
   color:#3b261e;
+  font-weight:500;
 }
     .navlinks a{
   color:#3b261e;
@@ -1158,7 +1161,8 @@
     @media(max-width:1100px){
 
       .nav{
-        min-height:105px;
+        min-height:88px;
+        height:88px;
 
         padding:0 4%;
 
@@ -1515,97 +1519,21 @@
         font-size:42px;
       }
     }
-/* HEADER REFINEMENT */
-@media (min-width: 721px){
 
-  .topbar{
-    min-height:46px;
-    padding:0 28px;
-    font-size:11px;
-    letter-spacing:3px;
-  }
 
-  .topbar-right{
-    right:32px;
-    gap:22px;
-    font-size:13px;
-  }
-
-  .nav{
-    min-height:105px;
-    gap:32px;
-    padding:0 5.4%;
-  }
-
-  .brand{
-    width:180px;
-    flex:0 0 180px;
-  }
-
-  .brand img{
-    width:145px;
-  }
-
-  .navlinks{
-    gap:34px;
-    font-size:19px;
-    color:#3b261e;
-  }
-
-  .navlinks a{
-    color:#3b261e;
-  }
-
-  .nav-cta{
-    padding:14px 25px;
-    font-size:17px;
-  }
-
+    /* FINAL HEADER DESIGN */
+@media (min-width:721px){
+.topbar{min-height:42px!important;height:42px!important;padding:0 24px!important;font-size:10px!important;letter-spacing:2.5px!important;}
+.topbar-right{right:28px!important;gap:20px!important;font-size:12px!important;}
+.nav{min-height:88px!important;height:88px!important;padding:0 5%!important;gap:28px!important;}
+.brand{width:175px!important;flex:0 0 175px!important;}
+.brand img{width:138px!important;height:auto!important;}
+.navlinks{gap:30px!important;font-size:18px!important;color:#2b1b16!important;font-weight:600!important;}
+.navlinks a,.navlinks a:visited,.navlinks a:active{color:#2b1b16!important;opacity:1!important;text-shadow:none!important;}
+.navlinks a:hover{color:#5a3429!important;}
+.nav-cta{padding:12px 22px!important;font-size:16px!important;}
 }
-    /* FINAL HEADER SIZE FIX */
-@media (min-width: 721px) {
-  .topbar {
-    min-height: 46px !important;
-    padding: 0 28px !important;
-    font-size: 11px !important;
-  }
-
-  .topbar-right {
-    right: 32px !important;
-    gap: 22px !important;
-    font-size: 13px !important;
-  }
-
-  .nav {
-    min-height: 105px !important;
-    padding: 0 5.4% !important;
-    gap: 32px !important;
-  }
-
-  .brand {
-    width: 180px !important;
-    flex: 0 0 180px !important;
-  }
-
-  .brand img {
-    width: 145px !important;
-  }
-
-  .navlinks {
-    gap: 34px !important;
-    font-size: 19px !important;
-  }
-
-  .navlinks a {
-    color: #3b261e !important;
-  }
-
-  .nav-cta {
-    padding: 14px 25px !important;
-    font-size: 17px !important;
-  }
-}
-  </style>
+</style>
 </head>
 
 
