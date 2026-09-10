@@ -90,19 +90,65 @@
     }
     .btn-primary{background:var(--rose);color:white}
     .btn-secondary{background:transparent;color:var(--brown)}
-    .hero-image{
-      min-height:610px;position:relative;
-      background:
-        linear-gradient(90deg,rgba(243,226,215,.35),transparent 28%),
-        url("assets/hero-hamper.jpg") center/cover no-repeat,
-        linear-gradient(135deg,#d8b5a5,#b98676);
-    }
-    .hero-image:after{
-      content:"Your hero hamper photograph will go here";
-      position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;
-      padding-bottom:24px;color:rgba(74,48,38,.55);font-size:13px;letter-spacing:1px;
-      pointer-events:none;
-    }
+  .hero-image{
+  min-height:610px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#f3e1d8,#e2b7a9);
+}
+
+.hero-slideshow{
+  position:absolute;
+  inset:28px 34px 28px 0;
+  border-radius:0 0 0 120px;
+  overflow:hidden;
+}
+
+.hero-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1.4s ease;
+}
+
+.hero-slide.active{
+  opacity:1;
+}
+
+.hero-slideshow:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(248,240,233,.35),transparent 30%);
+  pointer-events:none;
+}
+
+.hero-dots{
+  position:absolute;
+  bottom:42px;
+  left:45%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+  z-index:5;
+}
+
+.hero-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  border:0;
+  background:rgba(255,255,255,.65);
+  padding:0;
+  cursor:pointer;
+}
+
+.hero-dot.active{
+  background:#fff;
+}
 
     .highlights{
       background:var(--white);display:flex;justify-content:center;gap:0;
@@ -213,7 +259,29 @@
           <a class="btn btn-secondary" href="#services">Wedding Stationery</a>
         </div>
       </div>
-      <div class="hero-image" aria-label="The Tohfa House curated hamper"></div>
+    <div class="hero-image" aria-label="The Tohfa House curated gifting collection">
+  <div class="hero-slideshow">
+    <img class="hero-slide active" src="assets/01-blue-floral-hamper.png" alt="Blue floral gift hamper">
+    <img class="hero-slide" src="assets/07-pink-kitkat-flower-hamper.png" alt="Pink floral gift hamper">
+    <img class="hero-slide" src="assets/05-wedding-stationery.jpg" alt="Wedding stationery">
+    <img class="hero-slide" src="assets/04-yellow-wedding-hampers.png" alt="Yellow wedding hampers">
+    <img class="hero-slide" src="assets/03-twins-baby-hampers.png" alt="Baby gift hampers">
+    <img class="hero-slide" src="assets/02-teddy-mom-hamper.jpg" alt="Teddy gift hamper">
+    <img class="hero-slide" src="assets/06-retirement-hamper.png" alt="Retirement gift hamper">
+    <img class="hero-slide" src="assets/08-groom-wedding-hamper.png" alt="Groom wedding hamper">
+  </div>
+
+  <div class="hero-dots" aria-label="Hero image navigation">
+    <button class="hero-dot active" type="button" aria-label="Show image 1"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 2"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 3"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 4"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 5"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 6"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 7"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 8"></button>
+  </div>
+</div>
     </section>
 
     <div class="highlights">
@@ -266,5 +334,30 @@
     <p>thetohfahouse.keya@gmail.com &nbsp; | &nbsp; +91 97643 75721 &nbsp; | &nbsp; @the.tohfa.house</p>
     <p style="margin-top:10px">© 2026 The Tohfa House. All rights reserved.</p>
   </footer>
+ <script>
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+
+    current = index;
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+  });
+
+  setInterval(() => {
+    showSlide((current + 1) % slides.length);
+  }, 5000);
+</script> 
 </body>
 </html>
