@@ -120,7 +120,7 @@
     ========================================================= */
 
     .nav{
-      min-height:126px;
+      min-height:105px;
 
       background:var(--white);
 
@@ -142,22 +142,23 @@
     }
 
     .brand img{
-      width:165px;
+      width:145px;
       height:auto;
     }
 
     .navlinks{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      gap:38px;
-
-      flex:1;
-
-      font-family:"Cormorant Garamond",serif;
-      font-size:20px;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:36px;
+  flex:1;
+  font-family:"Cormorant Garamond",serif;
+  font-size:19px;
+  color:#3b261e;
+}
+    .navlinks a{
+  color:#3b261e;
+}
 
     .navlinks a{
       position:relative;
@@ -1515,7 +1516,53 @@
         font-size:42px;
       }
     }
+/* HEADER REFINEMENT */
+@media (min-width: 721px){
 
+  .topbar{
+    min-height:46px;
+    padding:0 28px;
+    font-size:11px;
+    letter-spacing:3px;
+  }
+
+  .topbar-right{
+    right:32px;
+    gap:22px;
+    font-size:13px;
+  }
+
+  .nav{
+    min-height:105px;
+    gap:32px;
+    padding:0 5.4%;
+  }
+
+  .brand{
+    width:180px;
+    flex:0 0 180px;
+  }
+
+  .brand img{
+    width:145px;
+  }
+
+  .navlinks{
+    gap:34px;
+    font-size:19px;
+    color:#3b261e;
+  }
+
+  .navlinks a{
+    color:#3b261e;
+  }
+
+  .nav-cta{
+    padding:14px 25px;
+    font-size:17px;
+  }
+
+}
   </style>
 </head>
 
